@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Calcul</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    </head>
+
+    <body>
+        <h3 id="merehead" class="merehead">Extra functionality</h3>
+        <ul id="more" class="more">
+            <li onclick="nPr()">
+                <a href="#nPr" id="fakultet">nPr</a>
+            </li>
+
+            <li onclick="abc()">
+                <a href="#abc" id="formelabc">ABC-formel</a>
+            </li>
+            
+            <li>
+                <a href="#overflate" id="over" onclick="manske()">Overflate</a>
+            </li>
+
+            <li onclick="nCr()">
+                <a href="#nCr" id="kombinatorikk">nCr</a>
+            </li>
+
+            <li onclick="equ()">
+                <a href="#equ" id="equ">x + y</a>
+            </li>
+
+            <li onclick="aRows()">
+                <a href="#artimetiskRekke" id="artiRekke">Arithmetic Series</a>
+            </li>
+        </ul>  
+
+        <div id="logg" class="logg">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" id="closeBtn">&times;</a>            
+            <a href="#" id="hloggs">Logg</a>
+            <a href="#" id="loggs"></a>
+            <a href="#" id="loggs"></a>
+            <a href="#" id="logga"></a>
+        </div>
+
+        <div id="main" class="main">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Logg</span>
+        </div>
+
+
+        <h1 id="head" class="head">Calc-Kul..!</h1>
+        <h1 id="produkt" class="produkt">... a product from Daisy D's</h1>
+        
+        <div id='calc-contain'>
+            <form name="calculator">
+                <input type="text" name="answer" id="svar" class="svar" onkeydown="keyCode(event)" onkeyup="keyCode(event)">
+                <input type="reset" id="klar" class="klar" value="C" onclick="cleared()"/>
+
+                <br>
+                <br>
+
+                <div id="rad1" class="rad1">
+                    <input type="button" onclick="logarithm()" id="logbtn" class="numbtn" value="log"/>
+                    <input type="button" onclick="audio()" id="tall7" class="numbtn" value="7"/>
+                    <input type="button" onclick="audio()" id="tall8" class="numbtn" value="8"/>
+                    <input type="button" onclick="audio()" id="tall9" class="numbtn" value="9"/>
+                    <input type="button" onclick="audio()" id="gange" class="numbtn" value="x"/>
+                </div>
+                <br>
+
+
+                <div id="rad2" class="rad2">
+                    <input type="button" id="tallpi" class="numbtn" value="π"/>
+                    <input type="button" onclick="audio()" id="tall4" class="numbtn" value="4"/>
+                    <input type="button" onclick="audio()" id="tall5" class="numbtn" value="5"/>
+                    <input type="button" onclick="audio()" id="tall6" class="numbtn" value="6"/>
+                    <input type="button" onclick="audio()" id="minus" class="numbtn" value="-"/>
+                </div>
+                <br>
+
+
+                <div id="rad3" class="rad3">
+                    <button onclick="potensdrop()" id="potensDropBtn" class="numbtn">a^x</button>
+
+                    <div id="dropinnhold" class="dropinnhold">
+                        <a href="#potensTwo">a^2</a>
+                        <a href="#potensThree">a^3</a>
+                        <a href="#potensFore">a^4</a>
+                    </div>
+                    <!--
+                    <button id="blockBtn" class="numbtn" onclick="showMenu()">a^x</button>
+                    <button id="noneBtn" class="classNoneBtn" onclick="hideMenu()">a^x</button>
+
+                    <div id="dropinnhold" style="display: none">
+                        <button id="potensKnapp1" class="contbtn">a^2</button>
+                        <button id="potensKnapp2" class="contbtn">a^3</button>
+                        <button id="potensKnapp3" class="contbtn">a^4</button>
+                    </div>
+                    -->
+
+                    <input type="button" onclick="audio()" id="tall1" class="numbtn" value="1"/>
+                    <input type="button" onclick="audio()" id="tall2" class="numbtn" value="2"/>
+                    <input type="button" onclick="audio()" id="tall3" class="numbtn" value="3"/>
+                    <input type="button" onclick="audio()" id="pluss" class="numbtn" value="+"/>
+                </div>
+                <br>
+
+
+
+                <div id="rad4" class="rad4">
+                    <input type="button" onclick="squareRoot()" id="kvadratroot" class="numbtn" value="SqRt"/>
+                    <input type="button" onclick="audio()" id="tall0" class="numbtn" value="0"/>
+                    <input id="komma" class="numbtn" type="button" onclick="audio()" value="."/>
+                    <input type="button" id="erlik" class="numbtn" value="=" onclick="equal()"/>
+                    <input type="button" onclick="audio()" id="dele" class="numbtn" value="/"/>
+                </div>
+            </form>
+        </div>
+
+
+
+        <div id="tekst" class="tekst">
+            <h3 id="flersvar" class="flersvar">Awnsers</h3>
+            <p id="eks1" class="teksten"></p>
+            <p id="eks2" class="eks2"></p>
+
+            <br>
+
+            <p id="kombinatorikksvar" class="kombinatorikksvar"></p>
+            <p id="permuta" class="permuta"></p>
+        </div>
+
+
+
+        <button id="clear2" class="clear2" onclick="clearSite()">C</button>
+
+
+        <audio id="lyd">
+            <source src="assets/gun-gunshot-01.mp3" type="audio/mpeg">
+        </audio>
+
+
+
+        <script src="js/app.js"></script>
+        <script src="js/app2.js"></script>
+    </body>
+<!-- This program is coded and developed by Daisy.D (a.k.a Mats Jørgen Engesund)-->
+</html>

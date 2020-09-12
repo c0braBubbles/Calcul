@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Equation Solwer</title>
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+        <style>
+            html {
+                background: #100a1c;
+                background-image: radial-gradient(50% 30% ellipse at center top, #201e40 0%, rgba(0,0,0,0) 100%), radial-gradient(60% 50% ellipse at center bottom, #261226 0%, #100a1c 100%);
+                background-attachment: fixed;
+                color: #6cacc5;
+                font-family: "Source Code Pro", monospace;
+            }
+
+            body {
+                color: #6cacc5;
+                margin: 0;
+                padding: 5em 0 2em;
+            }
+
+            input {
+                background: #100a1c;
+                background-image: radial-gradient(50% 30% ellipse at center top, #201e40 0%, rgba(0,0,0,0) 100%), radial-gradient(60% 50% ellipse at center bottom, #261226 0%, #100a1c 100%);
+                background-attachment: fixed;
+                color: #6cacc5;
+                border: #201e40 1px solid;
+                text-align: right;
+                margin: 1px;
+            }
+
+            .svar {
+                font-size: 1.2vw;
+                text-align: center;
+            }
+
+            .knapp {
+                font-family: "Source Code Pro", monospace;
+                background-color: #201e40;
+                color: #6cacc5;
+                padding: 0px;
+                font-size: 16px;
+                border: none;
+                margin: 0px;
+                width: 117px;
+                height: 60px;
+                cursor: pointer;
+                text-align: center;
+            }
+
+            .head {
+                text-align: center;
+            }
+            .parahead {
+                text-align: center;
+            }
+
+            .konteiner {
+                position: absolute;
+                height: 200px;
+                width: 400px;
+                margin: -100px 0 0 -200px;
+                top: 50%;
+                left: 50%;
+            }
+        </style>
+    </head>
+        <body>
+            <h1 id="head" class="head">Equation solver</h1>
+            <h3 id="parahead" class="parahead">for equation with two unknowns</h3>
+
+            <div id="konteiner" class="konteiner">
+                <input type="text" id="ex1" size="2">
+                    x &nbsp &nbsp + &nbsp &nbsp
+
+                <input type="text" id="why1" size="2">
+                    y &nbsp &nbsp = &nbsp &nbsp
+                
+                <input type="text" id="svar1" size="2">
+
+                <br> <br>
+
+                <input type="text" id="ex2" size="2">
+                    x &nbsp &nbsp + &nbsp &nbsp
+
+                <input type="text" id="why2" size="2">
+                    y &nbsp &nbsp = &nbsp  &nbsp
+
+                <input type="text" size="2" id="svar2">
+                <br> <br>
+
+                <div id="svar" class="svar"></div>
+                <br> <br>
+
+                <button id="knapp" class="knapp" onclick="goBabyGo()">Do The Math!</button>
+                <button id="knapp3" class="knapp" onclick="again()">CLEAR!</button>
+                <button id="knapp2" class="knapp" onclick="back()">Phone Home!</button>
+
+            </div>
+
+            <script>
+                function back() {
+                    window.location = "https://cohibah.azurewebsites.net/";
+                }
+
+
+                function again() {
+                    window.location.reload();
+                }
+
+
+                function getValues() {
+                    var x1 = document.getElementById("ex1");
+                    var y1 = document.getElementById("why1");
+                    var awn1 = document.getElementById("svar1");
+                    var x2 = document.getElementById("ex2");
+                    var y2 = document.getElementById("why2");
+                    var awn2 = document.getElementById("svar2");
+
+                    //konvertere tallene;
+                    ex1 = x1.value - 0;
+                    why1 = y1.value - 0;
+                    svar1 = awn1.value - 0;
+                    ex2 = x2.value - 0;
+                    why2 = y2.value - 0;
+                    svar2 = awn2.value - 0;
+                }
+
+
+                function outPut() {
+                    var divMessage = document.getElementById("svar");
+                    divMessage.innerHTML = "x = " + x + " | y = " + y;
+                }
+
+
+                function goBabyGo() {
+                    getValues();
+
+                    x = (svar2*why1 - svar1*why2) / (why1*ex2 - ex1*why2);
+                    y = (svar1*ex2 - svar2*ex1) / (why1*ex2 - ex1*why2);
+
+                    //x = x.toFixed(3);
+                    //y = y.toFixed(3);
+
+                    outPut();
+                }
+
+
+                if(screen.width >= 1500) {
+                    document.write("<style>body{zoom:115%;}.hand_ipad img {top:114px}</style>");
+                }
+
+
+                if(screen.width >= 2000) {
+                    document.write("<style>body{zoom:135%;}.hand_ipad img {top:114px}.hand_ipad iframe{height: 275px;}</style>");
+                }
+
+
+                if(screen.width >= 2500) {
+                    document.write("<style>body{zoom:150%;}.hand_ipad img {top:114px}.hand_ipad img iframe{height: 275px;}</style>");
+                }
+            </script>
+        </body>
+</html>
